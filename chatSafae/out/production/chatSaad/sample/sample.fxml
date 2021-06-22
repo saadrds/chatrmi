@@ -1,0 +1,52 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.*?>
+<BorderPane fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml" >
+    <top>
+        <HBox spacing="10">
+            <padding>
+                <Insets left="10" right="10" bottom="10"></Insets>
+            </padding>
+            <children>
+                <Label>Chat Application</Label>
+                <Button fx:id="connect" text="connect" onAction="#connect"></Button>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="10">
+            <padding>
+            <Insets left="10" right="10" bottom="10"></Insets>
+            </padding>
+            <ListView fx:id="lv">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="chat"/>
+                    </FXCollections>
+                </items>
+            </ListView>
+
+        </VBox>
+    </center>
+    <bottom>
+        <HBox spacing="10">
+            <padding>
+                <Insets left="10" right="10" bottom="10"></Insets>
+            </padding>
+            <children>
+                <TextField fx:id="tf"></TextField>
+                <Button fx:id="send" text="send" onAction="#send"></Button>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
